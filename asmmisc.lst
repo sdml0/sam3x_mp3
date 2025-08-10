@@ -1,0 +1,137 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;/* ***** BEGIN LICENSE BLOCK ***** 
+    2 00000000         ; * Version: RCSL 1.0/RPSL 1.0 
+    3 00000000         ; *  
+    4 00000000         ; * Portions Copyright (c) 1995-2002 RealNetworks, Inc. 
+                       All Rights Reserved. 
+    5 00000000         ; *      
+    6 00000000         ; * The contents of this file, and the files included wi
+                       th this file, are 
+    7 00000000         ; * subject to the current version of the RealNetworks P
+                       ublic Source License 
+    8 00000000         ; * Version 1.0 (the "RPSL") available at 
+    9 00000000         ; * http://www.helixcommunity.org/content/rpsl unless yo
+                       u have licensed 
+   10 00000000         ; * the file under the RealNetworks Community Source Lic
+                       ense Version 1.0 
+   11 00000000         ; * (the "RCSL") available at http://www.helixcommunity.
+                       org/content/rcsl, 
+   12 00000000         ; * in which case the RCSL will apply. You may also obta
+                       in the license terms 
+   13 00000000         ; * directly from RealNetworks.  You may not use this fi
+                       le except in 
+   14 00000000         ; * compliance with the RPSL or, if you have a valid RCS
+                       L with RealNetworks 
+   15 00000000         ; * applicable to this file, the RCSL.  Please see the a
+                       pplicable RPSL or 
+   16 00000000         ; * RCSL for the rights, obligations and limitations gov
+                       erning use of the 
+   17 00000000         ; * contents of the file.  
+   18 00000000         ; *  
+   19 00000000         ; * This file is part of the Helix DNA Technology. RealN
+                       etworks is the 
+   20 00000000         ; * developer of the Original Code and owns the copyrigh
+                       ts in the portions 
+   21 00000000         ; * it created. 
+   22 00000000         ; *  
+   23 00000000         ; * This file, and the files included with this file, is
+                        distributed and made 
+   24 00000000         ; * available on an 'AS IS' basis, WITHOUT WARRANTY OF A
+                       NY KIND, EITHER 
+   25 00000000         ; * EXPRESS OR IMPLIED, AND REALNETWORKS HEREBY DISCLAIM
+                       S ALL SUCH WARRANTIES, 
+   26 00000000         ; * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERC
+                       HANTABILITY, FITNESS 
+   27 00000000         ; * FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INF
+                       RINGEMENT. 
+   28 00000000         ; * 
+   29 00000000         ; * Technology Compatibility Kit Test Suite(s) Location:
+                        
+   30 00000000         ; *    http://www.helixcommunity.org/content/tck 
+   31 00000000         ; * 
+   32 00000000         ; * Contributor(s): 
+   33 00000000         ; *  
+   34 00000000         ; * ***** END LICENSE BLOCK ***** */ 
+   35 00000000         
+   36 00000000                 AREA             |.text|, CODE, READONLY
+   37 00000000         
+   38 00000000         ; int xmp3_MULSHIFT32(int x, int y);
+   39 00000000         
+   40 00000000                 EXPORT           xmp3_MULSHIFT32
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   41 00000000         xmp3_MULSHIFT32
+   42 00000000 FB81 2000       smull            r2, r0, r1, r0
+   43 00000004 4770            bx               lr
+   44 00000006         
+   45 00000006         
+   46 00000006                 EXPORT           FASTABS
+   47 00000006         FASTABS
+   48 00000006 EA80 71E0       eor              r1, r0, r0, asr #31
+   49 0000000A EBA1 70E0       sub              r0, r1, r0, asr #31
+   50 0000000E 4770            bx               lr
+   51 00000010         
+   52 00000010         
+   53 00000010                 EXPORT           CLZ
+   54 00000010         CLZ
+   55 00000010 FAB0 F080       clz              r0, r0
+   56 00000014 4770            bx               lr
+   57 00000016         
+   58 00000016                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\asmmisc.d -o.\objects\asmmisc.o -I.\RTE\_Target_1 -ID:\P
+rograms\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include -ID:\Programs\Keil_
+v5\ARM\PACK\Atmel\SAM3X_DFP\1.0.50\include -ID:\Programs\Keil_v5\ARM\PACK\Keil\
+SAM3_DFP\1.2.2\Device\SAM3XA\Include -ID:\Programs\Keil_v5\ARM\PACK\Atmel\SAM3X
+_DFP\1.0.50\Device\SAM3XA\Include --predefine="__UVISION_VERSION SETA 538" --pr
+edefine="_RTE_ SETA 1" --predefine="_RTE_ SETA 1" --predefine="__SAM3X8E__ SETA
+ 1" --list=.\asmmisc.lst Helix\asmmisc.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 36 in file Helix\asmmisc.s
+   Uses
+      None
+Comment: .text unused
+CLZ 00000010
+
+Symbol: CLZ
+   Definitions
+      At line 54 in file Helix\asmmisc.s
+   Uses
+      At line 53 in file Helix\asmmisc.s
+Comment: CLZ used once
+FASTABS 00000006
+
+Symbol: FASTABS
+   Definitions
+      At line 47 in file Helix\asmmisc.s
+   Uses
+      At line 46 in file Helix\asmmisc.s
+Comment: FASTABS used once
+xmp3_MULSHIFT32 00000000
+
+Symbol: xmp3_MULSHIFT32
+   Definitions
+      At line 41 in file Helix\asmmisc.s
+   Uses
+      At line 40 in file Helix\asmmisc.s
+Comment: xmp3_MULSHIFT32 used once
+4 symbols
+337 symbols in table

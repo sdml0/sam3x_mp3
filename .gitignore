@@ -1,0 +1,12 @@
+*.zip
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.uvguix.*
+*.pdf
+EventRecorderStub.scvd
+DebugConfig
+Objects
+Listings
