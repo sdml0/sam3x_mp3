@@ -1,4 +1,6 @@
 *.zip
+*.lst
+*.map
 *.o
 *.d
 *.elf
